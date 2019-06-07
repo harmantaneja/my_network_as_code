@@ -1,4 +1,13 @@
 ---
+ - name: Ensure Configs Directory Preset
+   connection: local
+   hosts: localhost
+   gather_facts: no
+   tasks:
+    - file:
+      path: configs/
+      state: directory
+
  - name: Generate IOS-XE Router Configurations
    connection: local
    hosts: cisco-ios-xe-routers
@@ -16,3 +25,14 @@
     - template:
         src=templates/cisco_nxos.j2
         dest=configs/{{ inventory_hostname }}
+
+ - name: Generate ASA Configurations
+   connection: local
+   hosts: cisco-asa
+   gather_facts: no
+   tasks:
+    - template:
+        src=templates/cisco_asa.j2
+        dest=configs/{{ inventory_hostname }}
+
+
