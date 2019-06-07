@@ -6,14 +6,13 @@ stage ('Render Configurations') {
 // Generate our configurations with our sweet Playbooks
 }
 stage ('Unit Testing') {
-// Do some kind of "linting" on our code to make sure we didn't bugger a
-nything up too badly
+// Do some kind of "linting" on our code to make sure we did bugger anything up too badly
 }
 stage ('Deploy Configurations to Dev') {
 // Push the configurations out to the dev environment
 }
 stage ('Functional/Integration Testing') {
-// Ping stuff and make sure we didn't blow up dev!
+// Ping stuff and make sure we didn blow up dev!
 }
 stage ('Promote Configurations to Production') {
 // Ping stuff and make sure we didn't blow up dev!
